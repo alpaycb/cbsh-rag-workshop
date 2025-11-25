@@ -332,7 +332,7 @@ let user_pwd = "yourPassword123!"
 The following command allows you to register the cluster into the config file:
 
 ```nushell
-clusters get $cluster_name | cb-env register $cluster_name $in."connection string"
+(clusters get $cluster_name | cb-env register $cluster_name $in."connection string"
   --capella-organization "rag-workshop"
   --project (projects | $in.0.name)
   --default-bucket $bucket_name
@@ -340,7 +340,7 @@ clusters get $cluster_name | cb-env register $cluster_name $in."connection strin
   --default-collection $collection_name
   --username $user_name 
   --password $user_pwd
-  --save  
+  --save)  
 ```
 ```nushell
 cb-env cluster $cluster_name
@@ -426,7 +426,7 @@ You'll insert a few documents containing information about Couchbase features. T
 
 Let's add some documents about Couchbase features:
 
-- Now let's create our first document on Couchbase Platform changes, which are coming with v8.0. These are very new information, for which LLM's referenced embedding model was trained yet
+- Now let's create our first document on Couchbase Platform changes, which are coming with v8.0. These are very new information, for which LLM's referenced embedding model was not trained yet
 ```nushell
 doc upsert doc1 {title: "Platform Support Changes", category: "platform", text: "Couchbase Server 8.0 adds support for Alma Linux 10, Debian Linux 13, macOS 15 (Sequoia, development only), Oracle Linux 10, RHEL 10, Rocky Linux 10, and Windows Server 2025. It also drops support for Amazon Linux 2, macOS 12 (Monterey), SLES 12, Ubuntu 20.04 LTS, and Windows 10/Server 2019."}
 ```
