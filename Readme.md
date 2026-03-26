@@ -27,7 +27,7 @@ Together, these capabilities enable Couchbase to serve as both the system of rec
 ---
 ## Reference Architecture  
 Here we have a reference architecture for Retrieval Augmented Generation (RAG). What RAG does is to boost content quality by integrating relevant information in real time.  
-<details><summary>👀 Click to view the referemce architecture</summary><img src="images/RAGRefArch.png" width="900" alt="Org settings screenshot"></details>
+<details><summary>👀 Click to view the reference architecture</summary><img src="images/RAGRefArch.png" width="900" alt="Org settings screenshot"></details>
 
 When a user asks a question, it’s turned into vector embeddings and Couchbase retrieves the most relevant matches. These vector embeddings are then used in a query in the query service, which internally uses the index service to retrieve the top k-nearest neighbors (kNN), typically semantically similar documents. Instead of returning them directly, those results are passed along with the original question to a large language model. The LLM uses both pieces -your data and the query- to generate a grounded, factual response.  
 
